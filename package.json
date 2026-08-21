@@ -1,0 +1,8 @@
+{
+  "name": "flipkart-order-intelligence-support",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && bun dev",
+    "build": "cd frontend && bun run build"
+  }
+}
