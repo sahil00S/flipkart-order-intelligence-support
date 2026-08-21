@@ -1,0 +1,13 @@
+{
+  "title": "Return Risk Query",
+  "turns": [
+    {
+      "user": "What is the return risk for this order?",
+      "assistant": {
+        "answer": "Return probability is 0.6276. Risk bucket: HIGH. Decision threshold: 0.5000.",
+        "source": "return_risk_model",
+        "confidence": 0.6276
+      }
+    }
+  ]
+}
