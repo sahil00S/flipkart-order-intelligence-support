@@ -5,13 +5,21 @@ import joblib
 import pandas as pd
 
 
-MODEL_PATH = Path("models/return_risk_model.pkl")
-THRESHOLD_PATH = Path("models/return_risk_threshold.json")
+MODEL_PATH = Path(
+    "models/return_risk_model.pkl"
+)
+
+THRESHOLD_PATH = Path(
+    "models/return_risk_threshold.json"
+)
 
 
-def check_return_risk(order_features: dict) -> dict:
+def check_return_risk(
+    order_features: dict,
+) -> dict:
     """
-    Predict return risk using the actual saved Part 1 model.
+    Load the actual Part 1 Random Forest pipeline,
+    call predict_proba(), and return threshold-anchored risk.
     """
 
     if not MODEL_PATH.exists():
@@ -24,7 +32,9 @@ def check_return_risk(order_features: dict) -> dict:
             f"Threshold file not found: {THRESHOLD_PATH}"
         )
 
-    model = joblib.load(MODEL_PATH)
+    model = joblib.load(
+        MODEL_PATH
+    )
 
     with open(
         THRESHOLD_PATH,
@@ -37,34 +47,39 @@ def check_return_risk(order_features: dict) -> dict:
         threshold_data["t_star_rf"]
     )
 
-    # The saved pipeline contains the preprocessing,
-    # so the tool sends raw order features directly.
     features = pd.DataFrame(
         [order_features]
     )
 
-    probabilities = model.predict_proba(features)
+    probabilities = model.predict_proba(
+        features
+    )
 
     return_probability = float(
         probabilities[0, 1]
     )
 
-    if return_probability >= threshold:
-        risk_bucket = "HIGH"
+    high_cutoff = threshold + 0.15
+
+    if return_probability < threshold:
+        risk_bucket = "Low"
+
+    elif return_probability >= high_cutoff:
+        risk_bucket = "High"
+
     else:
-        risk_bucket = "LOW"
+        risk_bucket = "Medium"
 
     return {
         "return_probability": return_probability,
         "threshold": threshold,
+        "high_cutoff": high_cutoff,
         "risk_bucket": risk_bucket,
     }
 
 
 if __name__ == "__main__":
 
-    # Realistic order example using the exact
-    # feature names expected by the Part 1 model.
     example_order = {
         "product_category": "Apparel",
         "price_inr": 1200,
@@ -83,5 +98,13 @@ if __name__ == "__main__":
         example_order
     )
 
-    print("=== Return Risk Tool Test ===")
-    print(json.dumps(result, indent=2))
+    print(
+        "=== Return Risk Tool Test ==="
+    )
+
+    print(
+        json.dumps(
+            result,
+            indent=2,
+        )
+    )

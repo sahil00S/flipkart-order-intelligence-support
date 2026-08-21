@@ -5,7 +5,7 @@
       "user": "Classify the product image.",
       "assistant": {
         "answer": "The product image is classified as Ankle_boot with confidence 0.9462.",
-        "source": "product_classifier",
+        "source": "image_classifier_tool",
         "confidence": 0.9462
       }
     }

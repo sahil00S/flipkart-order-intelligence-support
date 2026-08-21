@@ -202,3 +202,41 @@ if __name__ == "__main__":
         "Mean Recall@3:",
         round(mean_recall, 4),
     )
+
+    metrics_output = {
+    "queries": len(evaluation_queries),
+    "mean_precision_at_3": mean_precision,
+    "mean_recall_at_3": mean_recall,
+    "per_query": [
+        {
+            "query": item["query"],
+            "relevant_documents": sorted(
+                item["relevant_documents"]
+            ),
+            "precision_at_3": precision,
+            "recall_at_3": recall,
+        }
+        for item, precision, recall in zip(
+            evaluation_queries,
+            precision_scores,
+            recall_scores,
+        )
+    ],
+}
+
+with open(
+    "part3/retrieval_metrics.json",
+    "w",
+    encoding="utf-8",
+) as f:
+    json.dump(
+        metrics_output,
+        f,
+        indent=2,
+        ensure_ascii=False,
+    )
+
+print(
+    "Saved retrieval metrics: "
+    "part3/retrieval_metrics.json"
+)

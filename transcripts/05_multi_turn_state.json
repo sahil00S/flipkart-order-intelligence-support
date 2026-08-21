@@ -5,7 +5,7 @@
       "user": "How long does a COD refund take?",
       "assistant": {
         "answer": "COD refunds are processed within 5 to 7 business days after refund initiation.",
-        "source": "cod_refund.md",
+        "source": "policy_kb",
         "confidence": 0.9078
       }
     },
@@ -13,7 +13,7 @@
       "user": "And what about the delivery time?",
       "assistant": {
         "answer": "The delivery estimate can vary based on the destination, product, and logistics conditions.",
-        "source": "delivery_sla.md",
+        "source": "policy_kb",
         "confidence": 0.477
       }
     }

@@ -5,7 +5,7 @@
       "user": "What is the maximum compensation for a delayed order?",
       "assistant": {
         "answer": "I cannot confirm that policy from the available knowledge base.",
-        "source": "knowledge_base",
+        "source": "policy_kb",
         "confidence": 0.4449
       }
     }

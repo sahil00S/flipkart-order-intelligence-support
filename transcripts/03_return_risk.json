@@ -4,8 +4,8 @@
     {
       "user": "What is the return risk for this order?",
       "assistant": {
-        "answer": "Return probability is 0.6276. Risk bucket: HIGH. Decision threshold: 0.5000.",
-        "source": "return_risk_model",
+        "answer": "Return probability is 0.6276. Risk bucket: Medium. Decision threshold: 0.5000. High-risk cutoff: 0.6500.",
+        "source": "return_risk_tool",
         "confidence": 0.6276
       }
     }

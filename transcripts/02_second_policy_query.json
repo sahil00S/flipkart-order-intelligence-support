@@ -5,7 +5,7 @@
       "user": "What is the standard delivery time?",
       "assistant": {
         "answer": "# Delivery SLA Standard delivery is generally expected within 3 to 7 days from order confirmation.",
-        "source": "delivery_sla.md",
+        "source": "policy_kb",
         "confidence": 0.5295
       }
     }
