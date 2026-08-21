@@ -1,0 +1,50 @@
+[
+  {
+    "document_id": "cod_policy",
+    "source": "cod_policy.md"
+  },
+  {
+    "document_id": "cod_refund",
+    "source": "cod_refund.md"
+  },
+  {
+    "document_id": "customer_support",
+    "source": "customer_support.md"
+  },
+  {
+    "document_id": "damaged_product",
+    "source": "damaged_product.md"
+  },
+  {
+    "document_id": "delivery_sla",
+    "source": "delivery_sla.md"
+  },
+  {
+    "document_id": "missing_product",
+    "source": "missing_product.md"
+  },
+  {
+    "document_id": "payment_policy",
+    "source": "payment_policy.md"
+  },
+  {
+    "document_id": "prepaid_policy",
+    "source": "prepaid_policy.md"
+  },
+  {
+    "document_id": "replacement_policy",
+    "source": "replacement_policy.md"
+  },
+  {
+    "document_id": "return_windows",
+    "source": "return_windows.md"
+  },
+  {
+    "document_id": "reverse_pickup",
+    "source": "reverse_pickup.md"
+  },
+  {
+    "document_id": "wrong_product",
+    "source": "wrong_product.md"
+  }
+]
