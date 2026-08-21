@@ -1,0 +1,13 @@
+{
+  "t_star_rf": 0.5,
+  "precision_at_t_star_rf": 0.32397408207343414,
+  "recall_at_t_star_rf": 0.5494505494505495,
+  "f1_at_t_star_rf": 0.4076086956521739,
+  "model_type": "RandomForestClassifier",
+  "best_parameters": {
+    "model__max_depth": 6,
+    "model__n_estimators": 200
+  },
+  "test_roc_auc": 0.6203081348712416,
+  "cv_roc_auc": 0.6191897552449909
+}
